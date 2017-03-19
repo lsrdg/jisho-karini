@@ -1,16 +1,32 @@
-import requests, argparse, json, webbrowser
+import requests, argparse, json, webbrowser, pprint
 
 parser = argparse.ArgumentParser()
 
 parser.add_argument("-j", help="Open a browser and show the result", nargs=1)
+parser.add_argument("-r", help="Open a browser and show the result", nargs=1)
 parser.add_argument("-b", help="Open a browser and show the result", nargs=1)
 args = parser.parse_args()
 
-
+pp = pprint.PrettyPrinter(indent=2)
 
 def fetching():
     argJ = args.j[0] + '\"'
     url = 'http://jisho.org/api/v1/search/words?keyword=\"' + argJ
+    response = requests.get(url)
+    response.raise_for_status()
+    termData = json.loads(response.text)
+    t = termData['data']
+
+    for item in t:
+        
+        pp.pprint(item['japanese'])
+        pp.pprint(item['senses'])
+        print('\n')
+
+
+def rowFetching():
+    argR = args.r[0] + '\"'
+    url = 'http://jisho.org/api/v1/search/words?keyword=\"' + argR
     response = requests.get(url)
     response.raise_for_status()
     termData = json.loads(response.text)
@@ -39,6 +55,9 @@ def menuInit():
 
     elif args.b:
         browser()
+
+    elif args.r:
+        rowFetching()
 
     else:
         print("Oooops!")
