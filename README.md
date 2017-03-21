@@ -32,23 +32,7 @@ $ python jisho-karini.py -b house
 ```
 
 **-r** will access the Jisho API and print the result as in the example below:
-
-```
-$ python jisho-karini.py -r house
-
-[{'word': '椅子', 'reading': 'いす'}, {'word': '倚子', 'reading': 'いす'}, {'reading': 'イス'}]
-[{'english_definitions': ['chair', 'stool'], 'parts_of_speech': ['Noun'], 'links': [], 'tags': [], 'restrictions': [], 'see_al
-so': [], 'antonyms': [], 'source': [], 'info': []}, {'english_definitions': ['post', 'office', 'position'], 'parts_of_speech':
- [], 'links': [], 'tags': [], 'restrictions': [], 'see_also': [], 'antonyms': [], 'source': [], 'info': []}, {'english_definit
-ions': ['Chair'], 'parts_of_speech': ['Wikipedia definition'], 'links': [{'text': 'Read “Chair” on English Wikipedia', 'url':
-'http://en.wikipedia.org/wiki/Chair?oldid=495544638'}, {'text': 'Read “椅子” on Japanese Wikipedia', 'url': 'http://ja.wikiped
-ia.org/wiki/椅子?oldid=42406984'}], 'tags': [], 'restrictions': [], 'see_also': [], 'antonyms': [], 'source': [], 'info': [],
-'sentences': []}]
-
-[{'reading': 'チェア'}, {'reading': 'チェアー'}]
-[{'english_definitions': ['chair'], 'parts_of_speech': ['Noun'], 'links': [], 'tags': [], 'restrictions': [], 'see_also': [],
-'antonyms': [], 'source': [], 'info': []}]
-```
+![jisho-r-nv](jisho-karini-neovim.gif)
 
 **-j** the same as above but there will be line breaks in instead of long lines:
 
