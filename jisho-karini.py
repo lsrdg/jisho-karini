@@ -2,9 +2,9 @@ import requests, argparse, json, webbrowser, pprint
 
 parser = argparse.ArgumentParser()
 
-parser.add_argument("-j", help="Open a browser and show the result", nargs=1)
-parser.add_argument("-r", help="Open a browser and show the result", nargs=1)
-parser.add_argument("-b", help="Open a browser and show the result", nargs=1)
+parser.add_argument("-j", help="Search by JISHO's API. 'Pretty prints' the result", nargs=1)
+parser.add_argument("-r", help="Search by JISHO's API. Row prints the result", nargs=1)
+parser.add_argument("-b", help="Open a new tab on your browser and show the result", nargs=1)
 args = parser.parse_args()
 
 pp = pprint.PrettyPrinter(indent=2)
